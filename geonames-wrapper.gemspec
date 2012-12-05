@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 
   s.authors     = ["Michael Fellinger",     "Marcello Barnaba"]
   s.email       = ["m.fellinger@gmail.com", "vjt@openssl.it"  ]
-  s.homepage    = "http://github.com/manveru/geonames"
+  s.homepage    = "http://github.com/vjt/geonames"
 
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ["lib"]
