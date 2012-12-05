@@ -1,0 +1,20 @@
+PATH
+  remote: .
+  specs:
+    geonames-wrapper (1.0.0)
+      addressable (~> 2.3)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    addressable (2.3.2)
+    rake (10.0.2)
+    yard (0.8.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  geonames-wrapper!
+  rake
+  yard
