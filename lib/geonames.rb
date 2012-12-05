@@ -24,7 +24,7 @@ class GeoNames
       else
         joined = args.flatten.uniq.sort.join(',')
         template = Addressable::Template.new(
-          "http://{host}/#{name}JSON?{-join|&|#{joined}}"
+          "http://{host}/#{name}JSON{?#{joined}}"
         )
       end
       [name, template]
