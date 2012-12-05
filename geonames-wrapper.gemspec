@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.required_ruby_version = ">= 1.9.0"
 
-  s.authors     = ["Michael Fellinger"]
-  s.email       = ["m.fellinger@gmail.com"]
+  s.authors     = ["Michael Fellinger",     "Marcello Barnaba"]
+  s.email       = ["m.fellinger@gmail.com", "vjt@openssl.it"  ]
   s.homepage    = "http://github.com/manveru/geonames"
 
   s.files         = `git ls-files`.split("\n")
