@@ -57,9 +57,19 @@ class GeoNames
     hash
   end
 
-  # Returns a list of recent earthquakes, ordered by magnitude
+  # Returns the attribute of the geoNames feature with the given geonameId
   #
-  # @parse
+  # Parameters: geonameId
+  #
+  # Example:
+  #
+  #   api.get(geonameId: 2643743)
+  def get(parameters)
+    query(:get, parameters)
+  end
+  QUERY[:get] = %w[geonameId]
+
+  # Returns a list of recent earthquakes, ordered by magnitude
   #
   # north, south, east, west: coordinates of bounding box
   # callback: name of javascript function (optional parameter)
