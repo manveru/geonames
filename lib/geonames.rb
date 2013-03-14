@@ -4,7 +4,7 @@ require 'addressable/template'
 
 class GeoNames
   OPTIONS = {
-    host: 'ws.geonames.org',
+    host: 'api.geonames.org',
     time_format: '%Y-%m-%d %T %z',
     timezone: 'UTC',
     username: nil,
@@ -22,7 +22,7 @@ class GeoNames
           "http://{host}/#{name}JSON"
         )
       else
-        joined = args.flatten.uniq.sort.join(',')
+        joined = %w{ username } + args.flatten.uniq.sort.join(',')
         template = Addressable::Template.new(
           "http://{host}/#{name}JSON{?#{joined}}"
         )
