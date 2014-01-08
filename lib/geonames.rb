@@ -389,7 +389,7 @@ class GeoNames
   #
   #   api.find_nearby(lat: 47.3, lng: 9)
   def find_nearby(parameters = {})
-    query(:findNearby, parameters)
+    query(:findNearby, parameters)["geonames"]
   end
   QUERY[:findNearby] = %w[
     lat lng featureClass featureCode radius maxRows style
