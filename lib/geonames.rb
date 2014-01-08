@@ -3,6 +3,8 @@ require 'open-uri'
 require 'addressable/template'
 
 class GeoNames
+  class APIError < RuntimeError; end
+
   OPTIONS = {
     host: 'api.geonames.org',
     time_format: '%Y-%m-%d %T %z',
@@ -39,10 +41,17 @@ class GeoNames
 
     uri = uris[name].expand(default.merge(parameters))
 
-    if block_given?
-      open(uri.to_s){|io| yield(io.read) }
+    result =
+      if block_given?
+        open(uri.to_s){|io| yield(io.read) }
+      else
+        open(uri.to_s){|io| JSON.parse(io.read) }
+      end
+
+    if status = result["status"]
+      raise APIError, status.inspect
     else
-      open(uri.to_s){|io| JSON.parse(io.read) }
+      result
     end
   end
 
